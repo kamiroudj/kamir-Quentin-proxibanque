@@ -5,15 +5,15 @@ import java.sql.SQLException;
 import fr.gtm.proxibanqueV2.dao.IConseillerDao;
 import fr.gtm.proxibanqueV2.dao.impl.ConseillerDaoImp;
 import fr.gtm.proxibanqueV2.domaine.Conseiller;
-import fr.gtm.proxibanqueV2.service.IConseillerService;
+import fr.gtm.proxibanqueV2.service.ILoginService;
 
-public class ConseillerService implements IConseillerService{
+public class LoginServiceImpl implements ILoginService{
 	
 	
 	private IConseillerDao dao= new ConseillerDaoImp();
 
 	@Override
-	public void verifierLoginPassword(String login, String password) throws LoginException {
+	public Conseiller verifierLoginPassword(String login, String password) throws LoginException {
 
 		Conseiller conseiller = null;
 		if (login != null && password != null) {
@@ -23,9 +23,11 @@ public class ConseillerService implements IConseillerService{
 		System.out.println("conseiller :"+conseiller);
 		
 		
-		if ((conseiller == null) || !conseiller.getPassword().equals(password)) throw new LoginException("Echec authentification Conseiller. Essayer à nouveau");
-	}
+		if ((conseiller == null) || !conseiller.getPassword().equals(password))  throw new LoginException("Echec authentification Conseiller. Essayer à nouveau");
 	
 	
+		return conseiller;
+
+}
 
 }

@@ -28,10 +28,11 @@ public class ConseillerDaoImp implements IConseillerDao {
 			
 			if (rs.next()) {
 				conseiller = new Conseiller();
+				conseiller.setId(rs.getInt("id"));
 				conseiller.setLogin(rs.getString("login"));
-				System.out.println("login obtenu "+rs.getString("login"));
 				conseiller.setPassword(rs.getString("password"));
-				System.out.println("password obtenu "+rs.getString("password"));
+				conseiller.setNom(rs.getString("nom"));
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

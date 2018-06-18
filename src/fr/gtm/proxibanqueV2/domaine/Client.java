@@ -9,6 +9,13 @@ public class Client {
 	
 	/***************** constructeur *******************************************/
 	
+	public Client() {
+		
+	}
+	
+	
+	
+	
 	public Client(String nom, String prenom, String adresse) {
 		super();
 		this.nom = nom;

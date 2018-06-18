@@ -7,28 +7,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.gtm.proxibanqueV2.service.IConseillerService;
-import fr.gtm.proxibanqueV2.service.impl.ConseillerService;
+import fr.gtm.proxibanqueV2.domaine.Conseiller;
+import fr.gtm.proxibanqueV2.service.ILoginService;
+import fr.gtm.proxibanqueV2.service.impl.LoginServiceImpl;
 import fr.gtm.proxibanqueV2.service.impl.LoginException;
 
 /**
  * Servlet implementation class ConseillerServlet
  */
 
-public class ConseillerServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private IConseillerService service;
+	private ILoginService service;
 
 	@Override
 	public void init() throws ServletException {
-		service= new ConseillerService();
+		service= new LoginServiceImpl();
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -37,21 +38,26 @@ public class ConseillerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
+		Conseiller conseiller = null;
 		
 		String erreur = "";
 		
 		try {
-			service.verifierLoginPassword(login, password);
+			conseiller = service.verifierLoginPassword(login, password);
 		} catch (LoginException e) {
 			erreur = e.getMessage();
 		}
 		
+		//request.getSession().setAttribute("conseiller",  conseiller.getNom());
 		
 		if (!erreur.equals("")) {
 			request.setAttribute("erreur", erreur);
 			doGet(request, response);
 		}else {
-			this.getServletContext().getRequestDispatcher("/WEB-INF/views/listeClients.jsp").forward(request, response);
+			
+			request.setAttribute("conseiller", conseiller);
+			this.getServletContext().getRequestDispatcher("/listClient").forward(request,response);
+			//this.getServletContext().getRequestDispatcher("/WEB-INF/views/listeClients.jsp").forward(request, response);
 		}
 
 	}

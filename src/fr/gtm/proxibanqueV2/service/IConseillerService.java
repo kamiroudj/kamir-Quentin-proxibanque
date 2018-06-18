@@ -1,16 +1,24 @@
 package fr.gtm.proxibanqueV2.service;
 
-import fr.gtm.proxibanqueV2.service.impl.LoginException;
+import java.util.List;
+
+import fr.gtm.proxibanqueV2.domaine.Client;
+import fr.gtm.proxibanqueV2.domaine.Conseiller;
 
 public interface IConseillerService {
 	
+	public List<Client> findClients(Conseiller conseiller);
 	
 	
 	//crud
 	
-	//verifier login et mot de passe
+	//create compte
+	//find by numero
+	//find liste comptes
+	//update compte
+	//delete compte
 	
 	
-	public void verifierLoginPassword(String login, String password) throws LoginException;
+	//virements compte a compte
 
 }

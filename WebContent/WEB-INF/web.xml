@@ -10,8 +10,8 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>ConseillerServlet</servlet-name>
-    <servlet-class>fr.gtm.proxibanqueV2.web.ConseillerServlet</servlet-class>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.LoginServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>ListeClientServlet</servlet-name>
@@ -25,8 +25,21 @@
     <servlet-name>SupprimerClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.SupprimerClientServlet</servlet-class>
   </servlet>
+  
+ <!--  <filter>
+  <filter-name>Filtre.Authentification</filter-name>
+  <filter-class>class du filtre</filter-class>
+  </filter>
+  
+  <filter-mapping> 
+    <filter-name>Filtre.Authentification</filter-name>
+    <url-pattern>/helloworld</url-pattern>
+    <url-pattern>/articles/*</url-pattern>
+    <url-pattern>/manage</url-pattern>
+  </filter-mapping>
+   -->
   <servlet-mapping>
-    <servlet-name>ConseillerServlet</servlet-name>
+    <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/auth</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
