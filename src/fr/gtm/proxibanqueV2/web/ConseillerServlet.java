@@ -28,7 +28,7 @@ public class ConseillerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/views/auth.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	/**
@@ -38,9 +38,6 @@ public class ConseillerServlet extends HttpServlet {
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		
-		System.out.println("login =" + login);
-		System.out.println("password =" + password);
-		
 		String erreur = "";
 		
 		try {
@@ -49,7 +46,6 @@ public class ConseillerServlet extends HttpServlet {
 			erreur = e.getMessage();
 		}
 		
-		System.out.println("erreur =" + erreur);
 		
 		if (!erreur.equals("")) {
 			request.setAttribute("erreur", erreur);

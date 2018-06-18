@@ -1,21 +1,11 @@
 body{
-    height : 2500px;
     background-color: black;
 }
-
-#bg1{
-    position: fixed;
-    z-index: -1;
-    left: 50%;
-    margin-left: -562px;
-    width: 1125px;
-    bottom: 3ex;
-    top: 112px;
+span.alert.alert-danger {	
+	padding: 0px;
+	border :0px;
 }
 
-img{
-    height: 950px;
-}
 
 div.header{
     z-index: +1;
