@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+
+.widget-header {
+background-color : blue;
+}
+
+.widget-header > h3{
+	margin:0;
+}
+
+.action{
+	text-align :center;
+}
+
+.actions{
+	text-align :center;
+	background-color : red;
+}
+
+
+.actions > div{	
+margin-top: 15px;
+margin-bottom: 15px;
+margin-right: 5px;
+margin-left: 5px;
+display: inline-block;
+background-color: white;
+width: 30%;
+}
