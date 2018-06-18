@@ -38,6 +38,8 @@ form#authentification{
     border-radius: 15px;
 
 }
+
+
 h1{
     margin-left: 10em;
 }
@@ -48,13 +50,7 @@ h3{
     text-decoration: underline;
 }
 
-div.presentation{
-    position: relative;
-    top: 150px;
-    width: 600px;
-    margin-right: auto;
-    margin-left: auto;
-}
+
 
 .navbar{
     height: 6em;

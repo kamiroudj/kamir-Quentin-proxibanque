@@ -23,6 +23,35 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+--
+-- Structure de la table `personne`
+--
+
+CREATE TABLE `personne` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(30) NOT NULL,
+  `prenom` varchar(30) NOT NULL,
+  `adresse` varchar(50) NOT NULL,
+  `telephone` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `personne`
+--
+
+INSERT INTO `personne` (`id`, `nom`, `prenom`, `adresse`, `telephone`) VALUES
+(1,'Durieux', 'Elocia', '20, avenue Gambetta, Paris', 0154859632),
+(2,'john', 'vanhertmann', '20, rue du jouet, Strasbourg', 0654858532),
+(3,'monsieur', 'conseiller', '14 bd saint georges, Paris', 0755556937),
+(4,'joiut', 'hermann', '30 rue lecourbe, Avignon', 0642421687),
+(5,'jojo', 'dudu', '158 avenue de france, 75006 Paris', 0785204612),
+(6,'franck', 'bonhomme', '75 rue saint jacques, Rosny', 0612457865),
+(7,'Roussel', 'Sylvain', '4 rue de la glacière,75014 Paris', 0616657835);
+
+
+
+-- ---------------------------------------------------------------------
+
 
 --
 -- Structure de la table `client`
@@ -39,29 +68,31 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`id`) VALUES
 (1),
 (4),
-(6);
+(6),
+(7);
 
 -- --------------------------------------------------------
 
+
 --
--- Structure de la table `client_compte`
+-- Structure de la table `conseiller`
 --
 
-CREATE TABLE `client_compte` (
-  `idClient` int(11) NOT NULL,
-  `idCompte` int(11) NOT NULL
+CREATE TABLE `conseiller` (
+  `id` int(11) NOT NULL,
+  `login` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `client_compte`
+-- Déchargement des données de la table `conseiller`
 --
 
-INSERT INTO `client_compte` (`idClient`, `idCompte`) VALUES
-(1, 1),
-(1, 2),
-(4, 3),
-(4, 4),
-(6, 5);
+INSERT INTO `conseiller` (`id`, `login`, `password`) VALUES
+(2, 'jvanher', 'mdp'),
+(3, 'conseiller', 'secret'),
+(5, 'jodudu', 'hello');
+
 
 -- --------------------------------------------------------
 
@@ -83,31 +114,41 @@ CREATE TABLE `comptes` (
 
 INSERT INTO `comptes` (`id`, `solde`, `typeCompte`, `decouvert`, `taux`) VALUES
 (1, '5000.00', 'epargne', NULL, '0.12'),
-(2, '7000.00', 'courant', '1200.00', NULL),
+(2, '7000.00', 'courant', '500.00', NULL),
 (3, '2500.00', 'courant', '500.00', NULL),
 (4, '3000.00', 'epargne', NULL, '0.06'),
-(5, '600.00', 'courant', '1200.00', NULL);
+(5, '600.00', 'courant', '300.00', NULL),
+(6, '1000.00', 'courant', '300.00', NULL);
+
 
 -- --------------------------------------------------------
 
+
+
 --
--- Structure de la table `conseiller`
+-- Structure de la table `client_compte`
 --
 
-CREATE TABLE `conseiller` (
-  `id` int(11) NOT NULL,
-  `login` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+CREATE TABLE `client_compte` (
+  `idClient` int(11) NOT NULL,
+  `idCompte` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `conseiller`
+-- Déchargement des données de la table `client_compte`
 --
 
-INSERT INTO `conseiller` (`id`, `login`, `password`) VALUES
-(2, 'jvanher', 'mdp'),
-(3, 'conseiller', 'secret'),
-(5, 'jodudu', 'hello');
+INSERT INTO `client_compte` (`idClient`, `idCompte`) VALUES
+(1, 1),
+(1, 2),
+(4, 3),
+(4, 4),
+(6, 5),
+(7, 6);
+
+
+
+
 
 -- --------------------------------------------------------
 
@@ -127,33 +168,12 @@ CREATE TABLE `conseiller_clients` (
 INSERT INTO `conseiller_clients` (`idConseiller`, `idClient`) VALUES
 (2, 1),
 (2, 4),
-(3, 6);
+(2, 6),
+(3, 7);
 
 -- --------------------------------------------------------
 
---
--- Structure de la table `personne`
---
 
-CREATE TABLE `personne` (
-  `id` int(11) NOT NULL,
-  `nom` varchar(30) NOT NULL,
-  `prenom` varchar(30) NOT NULL,
-  `adresse` varchar(50) NOT NULL,
-  `telephone` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `personne`
---
-
-INSERT INTO `personne` (`id`, `nom`, `prenom`, `adresse`, `telephone`) VALUES
-(1, 'Elsisi', 'Kamir', '20, avenue Gambetta, Paris', 154859632),
-(2, 'john', 'vanhertmann', '20, rue du jouet, Strasbourg', 654858532),
-(3, 'monsieur', 'conseiller', '14 bd saint georges, Paris', 755556937),
-(4, 'joiut', 'hermann', '30 rue lecourbe, Avignon', 642421687),
-(5, 'jojo', 'dudu', '158 avenue de france, 75006 Paris', 785204612),
-(6, 'franck', 'bonhomme', '75 rue saint jacques', 612457865);
 
 --
 -- Index pour les tables déchargées
@@ -207,25 +227,25 @@ ALTER TABLE `personne`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `comptes`
 --
 ALTER TABLE `comptes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `conseiller`
 --
 ALTER TABLE `conseiller`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `personne`
 --
 ALTER TABLE `personne`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

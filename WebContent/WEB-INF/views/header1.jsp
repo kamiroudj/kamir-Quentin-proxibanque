@@ -16,21 +16,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <h1 style="color: white">ProxiBanque</h1> 
             <div id="username">		
-			<a href="#">${sessionScope.conseiller}</a>
-			<a href="#">se déconnecter</a>
-	</div>                                 
+			<a href="#">${sessionScope.conseiller.nom}</a>
+			<a href="<c:url value="/logout" />">se déconnecter</a>
+			</div>                                 
         </nav>
     </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-   <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Clients</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Comptes</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Opérations</a>
-  </li>
-</ul>
-</nav>

@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 import fr.gtm.proxibanqueV2.dao.IConseillerDao;
 import fr.gtm.proxibanqueV2.domaine.Conseiller;
+import fr.gtm.proxibanqueV2.domaine.Personne;
 import fr.gtm.proxibanqueV2.tools.JdbcUtil;
 
 public class ConseillerDaoImp implements IConseillerDao {
@@ -21,7 +22,7 @@ public class ConseillerDaoImp implements IConseillerDao {
 		cn = JdbcUtil.seConnecter();
 		
 		try {
-			String sql = "SELECT `id`, `nom`, `prenom`, `login`, `password` FROM `conseiller` WHERE login = ?";
+			String sql = "SELECT * FROM `conseiller` c , `personne` p WHERE c.id = p.id and login = ?";
 			pst = cn.prepareStatement(sql);
 			pst.setString(1, login);
 			rs = pst.executeQuery();
@@ -32,7 +33,7 @@ public class ConseillerDaoImp implements IConseillerDao {
 				conseiller.setLogin(rs.getString("login"));
 				conseiller.setPassword(rs.getString("password"));
 				conseiller.setNom(rs.getString("nom"));
-
+				conseiller.setPrenom(rs.getString("prenom"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

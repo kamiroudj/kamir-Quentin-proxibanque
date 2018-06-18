@@ -1,11 +1,12 @@
 package fr.gtm.proxibanqueV2.web;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.gtm.proxibanqueV2.domaine.Conseiller;
 import fr.gtm.proxibanqueV2.service.ILoginService;
@@ -36,8 +37,11 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
+	
 		Conseiller conseiller = null;
 		
 		String erreur = "";
@@ -48,14 +52,17 @@ public class LoginServlet extends HttpServlet {
 			erreur = e.getMessage();
 		}
 		
-		//request.getSession().setAttribute("conseiller",  conseiller.getNom());
 		
-		if (!erreur.equals("")) {
+		
+		HttpSession session=request.getSession();
+		
+			
+		if (!erreur.isEmpty()) {
+			session.setAttribute("conseiller",  null);
 			request.setAttribute("erreur", erreur);
 			doGet(request, response);
 		}else {
-			
-			request.setAttribute("conseiller", conseiller);
+			session.setAttribute("conseiller",  conseiller);
 			this.getServletContext().getRequestDispatcher("/listClient").forward(request,response);
 			//this.getServletContext().getRequestDispatcher("/WEB-INF/views/listeClients.jsp").forward(request, response);
 		}

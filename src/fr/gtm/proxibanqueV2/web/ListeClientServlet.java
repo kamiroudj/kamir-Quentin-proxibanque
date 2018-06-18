@@ -38,12 +38,10 @@ public class ListeClientServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		List<Client> clients = new ArrayList<Client>();
+		Conseiller conseiller= (Conseiller)(req.getSession().getAttribute("conseiller"));
+		int idConseiller = conseiller.getId();
 		
-		Conseiller conseiller = (Conseiller) req.getAttribute("conseiller");
-		
-		
-		System.out.println("conseilller "+ conseiller);
-		clients = service.findClients(conseiller);
+		clients = service.findClients(idConseiller);
 		req.setAttribute("clients", clients);
 		doGet(req, resp);
 	}

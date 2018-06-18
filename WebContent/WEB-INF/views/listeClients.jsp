@@ -38,7 +38,7 @@
 	       <div><a href="<c:url value="/listClient" />"><img class="CRUDIcons" alt="logoListComptes" src="images/list-icon.png" /></a></div>
 	       </div> --%>
 	       <div class="actions">
-	       <div><a href="<c:url value="/updateClient" />">modifier</a></div>
+	       <div><a href="<c:url value="/updateClient?idClient=${client.id}" />">modifier</a></div>
 	       <div><a href="<c:url value="/deleteClient" />">supprimer</a></div>
 	       <div><a href="<c:url value="/listClient" />">listeComptes</a></div>
 	       </div>
