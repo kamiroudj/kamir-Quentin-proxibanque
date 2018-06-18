@@ -27,3 +27,8 @@ display: inline-block;
 background-color: white;
 width: 30%;
 }
+
+.CRUDIcons{
+	width: 3ex;
+	height: 3ex;
+}

@@ -29,7 +29,13 @@
       <td>Otto</td>
       <td>@mdo</td>
        <td>@mdo</td>
-       <td>@mdo</td>
+       <td>
+	       <div class="actions">
+	       <div><img class="CRUDIcons" href="" alt="logoModifier" src="images/update-icon.png"></div>
+	       <div><img class="CRUDIcons" href="" alt="logoSupprimer" src="images/delete-icon.png"></div>
+	       <div><img class="CRUDIcons" href="" alt="logoListComptes" src="images/list-icon.png"></div>
+	       </div>
+       </td>
     </tr>
     <tr>
       <th scope="row">2</th>

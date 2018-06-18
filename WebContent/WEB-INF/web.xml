@@ -9,18 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-   <servlet-name>ConseillerServlet</servlet-name>
-   <servlet-class>fr.gtm.proxibanqueV2.web.ConseillerServlet</servlet-class>
-</servlet>
+    <servlet-name>ConseillerServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.ConseillerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListeClientServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.ListeClientServlet</servlet-class>
+  </servlet>
   
   <servlet-mapping>
-   <servlet-name>ConseillerServlet</servlet-name>
-   <url-pattern>/auth</url-pattern>
-</servlet-mapping>
-  
-
-
-  
+    <servlet-name>ConseillerServlet</servlet-name>
+    <url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListeClientServlet</servlet-name>
+    <url-pattern>/clients</url-pattern>
+  </servlet-mapping>
 </web-app>
