@@ -31,9 +31,9 @@
        <td>@mdo</td>
        <td>
 	       <div class="actions">
-	       <div><img class="CRUDIcons" href="" alt="logoModifier" src="images/update-icon.png"></div>
-	       <div><img class="CRUDIcons" href="" alt="logoSupprimer" src="images/delete-icon.png"></div>
-	       <div><img class="CRUDIcons" href="" alt="logoListComptes" src="images/list-icon.png"></div>
+	       <div><img class="CRUDIcons" href="<c:url value="/updateClient" />" alt="logoModifier" src="images/update-icon.png" /></div>
+	       <div><img class="CRUDIcons" href="<c:url value="/deleteClient" />" alt="logoSupprimer" src="images/delete-icon.png" /></div>
+	       <div><img class="CRUDIcons" href="<c:url value="/listClient" />" alt="logoListComptes" src="images/list-icon.png" /></div>
 	       </div>
        </td>
     </tr>

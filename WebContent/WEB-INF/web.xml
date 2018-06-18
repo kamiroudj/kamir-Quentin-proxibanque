@@ -17,13 +17,28 @@
     <servlet-name>ListeClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.ListeClientServlet</servlet-class>
   </servlet>
-  
+  <servlet>
+    <servlet-name>ModifierClientServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.ModifierClientServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupprimerClientServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.SupprimerClientServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>ConseillerServlet</servlet-name>
     <url-pattern>/auth</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeClientServlet</servlet-name>
-    <url-pattern>/clients</url-pattern>
+    <url-pattern>/listClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModifierClientServlet</servlet-name>
+    <url-pattern>/updateClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupprimerClientServlet</servlet-name>
+    <url-pattern>/deleteClient</url-pattern>
   </servlet-mapping>
 </web-app>
