@@ -4,10 +4,12 @@
 <div class="container"style=position:relative;top:5em>
 
 	<div class="container-fluid">
-		<div class="widget-header">
-			<h3>Liste des comptes</h3>
-		</div>
-		<table class="table table-bordered" style="background-color: gray">
+					
+		            <div class="widget-header">
+               			 <h3>Liste des clients</h3>
+            		</div>
+		<table class="table table-bordered">
+
 			<thead>
 				<tr>
 					<th scope="col">Numéro</th>
@@ -20,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="client" items="${clients}">
+				<c:forEach var="client" items="${sessionScope.clients}">
 					<tr>
 						<th scope="row">${client.id}</th>
 						<td>${client.nom}</td>
@@ -35,13 +37,13 @@
 										style="width: 24px" style=height:24px /></a>
 								</div>
 								<div id="icones">
-									<a href="<c:url value='/deleteClient'/>" alt="Supprimer"
+									<a href="<c:url value='/deleteClient'/>" 
 										title="Supprimer"><img id="CRUDIcons" title="Supprimer"
 										alt="Supprimer" src="images/delete-icon.png"
 										style="width: 24px" style=height:24px /></a>
 								</div>
 								<div id="icones">
-									<a href="<c:url value='/listClient'/>" alt="ListComptes"
+									<a href="<c:url value="/comptes?idClient=${client.id}" />"  
 										title="ListComptes"><img id="CRUDIcons"
 										title="ListComptes" alt="ListComptes"
 										src="images/list-icon.png" style="width: 24px"
