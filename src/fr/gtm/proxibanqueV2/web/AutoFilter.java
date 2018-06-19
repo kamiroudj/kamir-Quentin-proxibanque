@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
-
+/**
+ * 
+ * @author Adminl
+ * la classe AutoFilter permet de jouer le role de douanier lors à la navigation d'un individu non connecté en lui refusant les accès.
+ */
 public class AutoFilter implements Filter{
 	
 	public static final String SESSION_AUTH ="conseiller";

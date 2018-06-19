@@ -1,5 +1,9 @@
 package fr.gtm.proxibanqueV2.domaine;
-
+/**
+ * 
+ * @author Adminl
+ * la classe Personne est la classe regroupant les informations qui sont à la fois nécessaire à l'enregistrement d'un conseiller comme d'un client.
+ */
 public class Personne {
 	
 	private int id;
@@ -15,7 +19,6 @@ public class Personne {
 	public Personne() {
 
 	}
-
 
 
 

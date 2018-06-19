@@ -15,7 +15,7 @@ import fr.gtm.proxibanqueV2.service.impl.ConseillerServiceImpl;
 /**
  * 
  * Servlet implementation class ModifierClientServlet
- * Redirige vers la vue 'update' permet de récupérer les informations de modification client.
+ * Redirige vers la vue 'update' permet de récupérer les informations de modification client afin d'effectuer les changement en base de donnée.
  */
 @WebServlet("/ModifierClientServlet")
 public class ModifierClientServlet extends HttpServlet {
