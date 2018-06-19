@@ -8,10 +8,12 @@
 			<div class="widget-header">
 				<h3>Effectuer un virement</h3>
 			</div>
+
+		<form  method="post" action="<c:url value="/virement" />">
 			<div class=form-group>
 				<h4>Compte à débiter :</h4>
 				<select id="compteCredit" class="form-control">
-					<c:forEach var=comptes items="${comptes}">
+					<c:forEach var="comptes" items="${comptes}">
 					<option>${compte.numeroCompte}</option>
 					</c:forEach>
 				</select>
@@ -19,7 +21,7 @@
 			<div class=form-group>
 				<h4>Compte à créditer :</h4>
 				<select id="compteDebit" class="form-control">
-					<c:forEach var=comptes items="${comptes}">
+					<c:forEach var="comptes" items="${comptes}">
 					<option>${compte.numeroCompte}</option>
 					</c:forEach>
 				</select>						
@@ -28,7 +30,10 @@
 				<h4>Montant :</h4>
 				<input class="form-control" type="text" placeholder="Montant à verser">
 			</div>
-		</div>
+			<button class="valForm">Valider</button>
+		</form>
+
+	</div>
 	</div>
 </div>
 
