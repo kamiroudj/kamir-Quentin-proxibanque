@@ -4,7 +4,7 @@
 <div class="container"style=position:relative;top:5em>
 
 	<div class="container-fluid">
-
+					
 		            <div class="widget-header">
                			 <h3>Liste des clients</h3>
             		</div>
@@ -22,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="client" items="${clients}">
+				<c:forEach var="client" items="${sessionScope.clients}">
 					<tr>
 						<th scope="row">${client.id}</th>
 						<td>${client.nom}</td>

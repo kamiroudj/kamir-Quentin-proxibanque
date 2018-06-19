@@ -1,6 +1,8 @@
 <%@ include file="header1.jsp"%>
 
 <div class="container">
+
+<div><a href="<c:url value="/listClient" />"><input type="button" value="Retour à la liste des clients"></a></div>
 	<div class="container-fluid">
 		<div class="widget-header">
 			<h3>Liste des comptes</h3>

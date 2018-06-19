@@ -42,7 +42,7 @@ public class ListeClientServlet extends HttpServlet {
 		int idConseiller = conseiller.getId();
 		
 		clients = service.findClients(idConseiller);
-		req.setAttribute("clients", clients);
+		req.getSession().setAttribute("clients", clients);
 		doGet(req, resp);
 	}
 
