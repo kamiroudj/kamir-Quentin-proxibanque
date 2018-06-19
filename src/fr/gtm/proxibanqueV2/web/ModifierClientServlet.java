@@ -14,7 +14,11 @@ import fr.gtm.proxibanqueV2.service.IConseillerService;
 import fr.gtm.proxibanqueV2.service.ILoginService;
 import fr.gtm.proxibanqueV2.service.impl.ConseillerServiceImpl;
 
-
+/**
+ * 
+ * Servlet implementation class ModifierClientServlet
+ * Redirige vers la vue 'update' permet de récupérer les informations de modification client.
+ */
 @WebServlet("/ModifierClientServlet")
 public class ModifierClientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,8 +32,12 @@ public class ModifierClientServlet extends HttpServlet {
 	}
 	
 	
-	
-	
+/**
+ * 
+ * @see HttpServlet#doGet (HttpServletRequest req, HttpServletResponse resp)
+ * Permet la récupération des informations client
+ */
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -42,7 +50,11 @@ public class ModifierClientServlet extends HttpServlet {
 		this.getServletContext().getRequestDispatcher("/WEB-INF/views/update.jsp").forward(req, resp);
 	}
 	
-	
+	/**
+	 * 
+	 * @see HttpServlet#doPost (HttpServletRequest req, HttpServletResponse resp)
+	 * Instanciation d'un nouveau client ajout des informations client puis update de la liste des clients (envoi à la BD par appel à service.update) puis renvoi à la vue 'listeClients'.
+	 */	
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
