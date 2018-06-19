@@ -63,7 +63,6 @@
   </filter>
   <filter-mapping>
   	<filter-name>AutoFilter</filter-name>
-  	<url-pattern>/auth</url-pattern>
   	<url-pattern>/listClient</url-pattern>
   	<url-pattern>/updateClient</url-pattern>
   	<url-pattern>/logout</url-pattern>
