@@ -5,9 +5,8 @@
 
 	<div class="container-fluid">
 		            <div class="widget-header">
-                <h3>Liste des comptes</h3>
-            </div id="bouttonlister">
-            <a href="<c:url value='/listClient' />"><input type="button" value="lister les clients"></a>
+               			 <h3>Liste des clients</h3>
+            		</div>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
@@ -30,17 +29,17 @@
 						<td>
 							<nav class="navbar navbar-expand-sm navbar-light actions2">
 								<div id="icones">
-									<a href="<c:url value="/updateClient?idClient=${client.id}" />" alt="Modifier"
+									<a href="<c:url value="/updateClient?idClient=${client.id}" />" 
 										title="Modifier"><img id="CRUDIcons" title="Modifier"
 										alt="Modifier" src="images/update-icon.png" /></a>
 								</div>
 								<div id="icones">
-									<a href="<c:url value='/deleteClient'/>" alt="Supprimer"
+									<a href="<c:url value='/deleteClient'/>" 
 										title="Supprimer"><img id="CRUDIcons" title="Supprimer"
 										alt="Supprimer" src="images/delete-icon.png" /></a>
 								</div>
 								<div id="icones">
-									<a href="<c:url value='/listClient'/>" alt="ListComptes"
+									<a href="<c:url value="/comptes?idClient=${client.id}" />"  
 										title="ListComptes"><img id="CRUDIcons"
 										title="ListComptes" alt="ListComptes" src="images/list-icon.png" /></a>
 								</div>

@@ -21,6 +21,11 @@
     <servlet-name>ModifierClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.ModifierClientServlet</servlet-class>
   </servlet>
+  
+   <servlet>
+    <servlet-name>ListeCompteServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.ListeCompteServlet</servlet-class>
+  </servlet> 
   <servlet>
     <servlet-name>SupprimerClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.SupprimerClientServlet</servlet-class>
@@ -29,6 +34,9 @@
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.LogoutServlet</servlet-class>
   </servlet>
+  
+  
+  
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/auth</url-pattern>
@@ -41,6 +49,13 @@
     <servlet-name>ModifierClientServlet</servlet-name>
     <url-pattern>/updateClient</url-pattern>
   </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>ListeCompteServlet</servlet-name>
+    <url-pattern>/comptes</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet-mapping>
     <servlet-name>SupprimerClientServlet</servlet-name>
     <url-pattern>/deleteClient</url-pattern>
