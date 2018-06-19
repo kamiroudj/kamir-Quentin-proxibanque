@@ -159,5 +159,12 @@ div#icones{
 }
 
 div.virementBloc{
-	
+	position: relative;
+    background-color: darkgray;
+    padding: 2em;
+    top: 250px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 15px;
 }
