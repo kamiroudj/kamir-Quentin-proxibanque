@@ -5,6 +5,7 @@ import java.util.List;
 import fr.gtm.proxibanqueV2.dao.IClientDao;
 import fr.gtm.proxibanqueV2.dao.impl.ClientDaoImp;
 import fr.gtm.proxibanqueV2.domaine.Client;
+import fr.gtm.proxibanqueV2.domaine.Compte;
 import fr.gtm.proxibanqueV2.domaine.Conseiller;
 import fr.gtm.proxibanqueV2.service.IConseillerService;
 
@@ -30,6 +31,12 @@ public class ConseillerServiceImpl implements IConseillerService {
 	public void updateClient(Client client) {
 	
 		dao.updateClient(client);
+	}
+
+	@Override
+	public List<Compte> findComptesClient(int idClient) {
+		
+		return dao.findComptes(idClient);
 	}
 	
 	

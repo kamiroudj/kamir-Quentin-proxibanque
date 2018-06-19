@@ -19,11 +19,31 @@
 				<c:forEach var="compte" items="${comptes}">
 					<tr>
 
-						<th scope="row">${compte.numero}</th>
-						<td>${compte}</td>
+						<th scope="row">${compte.numeroCompte}</th>
+						<td>${compte.getClass().getSimpleName()}</td>
 						<td>${compte.solde}</td>
-						<td>${compte.decouvert}</td>
-						<td>${compte.taux}</td>
+						
+						
+						<c:choose>
+  							<c:when test="${compte.getClass().getSimpleName() == 'CompteCourant'}">
+    						<td>${compte.decouvert}</td>
+  						</c:when>
+  						<c:otherwise>
+    						<td>--</td>
+  						</c:otherwise>
+						</c:choose>
+						
+						<c:choose>
+  							<c:when test="${compte.getClass().getSimpleName() == 'CompteEpargne'}">
+    						<td>${compte.taux}</td>
+  						</c:when>
+  						<c:otherwise>
+    						<td>--</td>
+  						</c:otherwise>
+						</c:choose>
+						
+					
+
 					</tr>
 				</c:forEach>
 			</tbody>

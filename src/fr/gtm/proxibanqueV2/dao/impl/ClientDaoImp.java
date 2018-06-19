@@ -9,6 +9,9 @@ import java.util.List;
 
 import fr.gtm.proxibanqueV2.dao.IClientDao;
 import fr.gtm.proxibanqueV2.domaine.Client;
+import fr.gtm.proxibanqueV2.domaine.Compte;
+import fr.gtm.proxibanqueV2.domaine.CompteCourant;
+import fr.gtm.proxibanqueV2.domaine.CompteEpargne;
 import fr.gtm.proxibanqueV2.domaine.Conseiller;
 import fr.gtm.proxibanqueV2.tools.JdbcUtil;
 
@@ -109,6 +112,49 @@ public class ClientDaoImp implements IClientDao {
 		JdbcUtil.seDeconnecter(cn, pst, null);
 		
 		
+	}
+
+	@Override
+	public List<Compte> findComptes(int idClient) {
+		
+		Connection cn; PreparedStatement pst=null; ResultSet rs = null;		
+		cn = JdbcUtil.seConnecter();
+		Compte compte = null;
+		List<Compte> comptes = new ArrayList();
+
+		try {
+			String sql = "SELECT * FROM `client_compte` cc, comptes c WHERE cc.idcompte = c.id and cc.idClient= ?";
+			pst = cn.prepareStatement(sql);
+			
+			pst.setInt(1, idClient);
+			rs = pst.executeQuery();
+			String typeCompte;
+			
+			while (rs.next()) {
+				typeCompte = rs.getString("typeCompte");
+				if (typeCompte.equals("courant")) {
+					compte = new CompteCourant();
+					compte.setNumeroCompte(rs.getInt("id"));
+					compte.setSolde(rs.getDouble("solde"));
+					((CompteCourant)compte).setDecouvert(rs.getDouble("decouvert"));
+				}else {
+					compte = new CompteEpargne();					
+					compte.setNumeroCompte(rs.getInt("id"));
+					compte.setSolde(rs.getDouble("solde"));
+					((CompteEpargne)compte).setTaux(rs.getDouble("taux"));
+				}
+
+
+				comptes.add(compte);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		JdbcUtil.seDeconnecter(cn, pst, null);
+		
+		
+		return comptes;
 	}
 
 }
