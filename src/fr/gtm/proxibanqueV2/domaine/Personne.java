@@ -1,12 +1,17 @@
 package fr.gtm.proxibanqueV2.domaine;
-
+/**
+ * 
+ * @author Adminl
+ * la classe Personne est la classe regroupant les informations qui sont à la fois nécessaire à l'enregistrement d'un conseiller comme d'un client.
+ */
 public class Personne {
 	
 	private int id;
 	private String nom;
 	private String prenom;
 	private String adresse;
-	private int telephone;
+	private String telephone;
+	private String email;
 	
 	
 	
@@ -17,12 +22,12 @@ public class Personne {
 
 
 
-
-	public Personne(String nom, String prenom, String adresse, int telephone) {
+	public Personne(String nom, String prenom, String adresse, String telephone, String email) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 		this.telephone = telephone;
+		this.email = email;
 	}
 
 
@@ -84,13 +89,22 @@ public class Personne {
 
 
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

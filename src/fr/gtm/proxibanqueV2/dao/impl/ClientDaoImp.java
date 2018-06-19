@@ -40,7 +40,8 @@ public class ClientDaoImp implements IClientDao {
 				client.setNom(rs.getString("nom"));
 				client.setPrenom(rs.getString("prenom"));
 				client.setAdresse(rs.getString("adresse"));
-				client.setTelephone(rs.getInt("telephone"));
+				client.setTelephone(rs.getString("telephone"));
+				client.setEmail(rs.getString("email"));
 				clients.add(client);
 			}
 		} catch (SQLException e) {
@@ -73,7 +74,8 @@ public class ClientDaoImp implements IClientDao {
 				client.setNom(rs.getString("nom"));
 				client.setPrenom(rs.getString("prenom"));
 				client.setAdresse(rs.getString("adresse"));
-				client.setTelephone(rs.getInt("telephone"));
+				client.setTelephone(rs.getString("telephone"));
+				client.setEmail(rs.getString("email"));
 
 			}
 		} catch (SQLException e) {
@@ -95,14 +97,15 @@ public class ClientDaoImp implements IClientDao {
 		Client cl = null;
 
 		try {
-			String sql = "UPDATE `personne` SET `nom`=?,`prenom`=?,`adresse`=?,`telephone`=? WHERE id = ?";
+			String sql = "UPDATE `personne` SET `nom`=?,`prenom`=?,`adresse`=?,`telephone`=?,`email`=? WHERE id = ?";
 			pst = cn.prepareStatement(sql);
 			
 			pst.setString(1, client.getNom());
 			pst.setString(2, client.getPrenom());
 			pst.setString(3, client.getAdresse());
-			pst.setInt(4, client.getTelephone());
-			pst.setInt(5, client.getId());
+			pst.setString(4, client.getTelephone());
+			pst.setString(5, client.getEmail());
+			pst.setInt(6, client.getId());
 			pst.executeUpdate();
 						
 		} catch (SQLException e) {
@@ -119,3 +122,5 @@ public class ClientDaoImp implements IClientDao {
 	
 
 }
+
+

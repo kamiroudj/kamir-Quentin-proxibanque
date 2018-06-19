@@ -2,7 +2,11 @@ package fr.gtm.proxibanqueV2.domaine;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 
+ * @author Adminl
+ * la classe Conseiller est hérité de la classe 'Personne' et représente le conseiller clientèle définit par un login, un password et un liste de clients qui lui sont rattachés.
+ */
 public class Conseiller extends Personne {
 	
 	private String login;
@@ -15,9 +19,13 @@ public class Conseiller extends Personne {
 		super();
 
 	}
-	
-	public Conseiller(String nom, String prenom, String adresse, int telephone, String login, String password) {
-		super(nom, prenom, adresse, telephone);
+	/**
+	 * 
+	 * @param login est nécessaire au conseiller afin de s'identifier sur l'application bancaire.
+	 * @param password est nécessaire au conseiller afin de s'identifier sur l'application bancaire.
+	 */
+	public Conseiller(String nom, String prenom, String adresse, String telephone, String email, String login, String password) {
+		super(nom, prenom, adresse, telephone, email);
 		this.login = login;
 		this.password = password;
 	}

@@ -16,6 +16,7 @@ import fr.gtm.proxibanqueV2.service.impl.ConseillerServiceImpl;
 
 /**
  * Servlet implementation class ListeCompteServlet
+ * Permet l'affichage de la vue "listeComptes" qui liste les Comptes d'un client sélectionné lors de l'étape précédente sur la vue 'listeClients'
  */
 @WebServlet("/ListeCompteServlet")
 public class ListeCompteServlet extends HttpServlet {
