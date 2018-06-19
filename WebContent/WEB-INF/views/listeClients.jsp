@@ -16,6 +16,8 @@
 					<th scope="col">Nom</th>
 					<th scope="col">Prénom</th>
 					<th scope="col">Adresse</th>
+					<th scope="col">Telephone</th>
+					<th scope="col">email</th>
 					<th scope="col">
 						<div class="action">Actions</div> <!-- <div class="actions"><div><label>modifier</label></div><div><label >supprimer</label></div><div><label >les comptes</label></div></div> -->
 					</th>
@@ -28,6 +30,8 @@
 						<td>${client.nom}</td>
 						<td>${client.prenom}</td>
 						<td>${client.adresse}</td>
+						<td>${client.telephone}</td>
+						<td>${client.email}</td>
 						<td>
 							<nav class="navbar navbar-expand-sm navbar-light actions2">
 								<div id="icones">

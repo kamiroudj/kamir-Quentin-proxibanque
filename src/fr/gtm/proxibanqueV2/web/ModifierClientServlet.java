@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.gtm.proxibanqueV2.domaine.Client;
-import fr.gtm.proxibanqueV2.domaine.Conseiller;
 import fr.gtm.proxibanqueV2.service.IConseillerService;
-import fr.gtm.proxibanqueV2.service.ILoginService;
 import fr.gtm.proxibanqueV2.service.impl.ConseillerServiceImpl;
 
 /**
@@ -67,8 +65,10 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	client.setPrenom(prenom);
 	String adresse = req.getParameter("adresse");
 	client.setAdresse(adresse);
-	int telephone = Integer.parseInt(req.getParameter("telephone"));
+	String telephone = req.getParameter("telephone");
 	client.setTelephone(telephone);
+	String email = req.getParameter("email");
+	client.setEmail(email);
 	
 	service.updateClient(client);
 

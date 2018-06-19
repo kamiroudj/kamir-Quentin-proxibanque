@@ -17,8 +17,8 @@ public class Client extends Personne {
 	
 	/*********************** getters et setters *******************************/
 	
-	public Client(String nom, String prenom, String adresse, int telephone) {
-		super(nom, prenom, adresse, telephone);
+	public Client(String nom, String prenom, String adresse, String telephone, String email) {
+		super(nom, prenom, adresse, telephone, email);
 	}
 
 

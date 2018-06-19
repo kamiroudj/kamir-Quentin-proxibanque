@@ -16,8 +16,8 @@ public class Conseiller extends Personne {
 
 	}
 	
-	public Conseiller(String nom, String prenom, String adresse, int telephone, String login, String password) {
-		super(nom, prenom, adresse, telephone);
+	public Conseiller(String nom, String prenom, String adresse, String telephone, String email, String login, String password) {
+		super(nom, prenom, adresse, telephone, email);
 		this.login = login;
 		this.password = password;
 	}

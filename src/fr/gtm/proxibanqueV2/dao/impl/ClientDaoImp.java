@@ -12,17 +12,16 @@ import fr.gtm.proxibanqueV2.domaine.Client;
 import fr.gtm.proxibanqueV2.domaine.Compte;
 import fr.gtm.proxibanqueV2.domaine.CompteCourant;
 import fr.gtm.proxibanqueV2.domaine.CompteEpargne;
-import fr.gtm.proxibanqueV2.domaine.Conseiller;
 import fr.gtm.proxibanqueV2.tools.JdbcUtil;
 
 public class ClientDaoImp implements IClientDao {
-	
-	
 
 	@Override
 	public List<Client> findClients(int idConseiller) {
-		
-		Connection cn; PreparedStatement pst=null; ResultSet rs = null;		
+
+		Connection cn;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 		cn = JdbcUtil.seConnecter();
 		Client client = null;
 		List<Client> clients = new ArrayList();
@@ -30,94 +29,100 @@ public class ClientDaoImp implements IClientDao {
 		try {
 			String sql = "SELECT * FROM `conseiller_clients` cc , personne p WHERE cc.idClient = p.id and cc.idConseiller = ?";
 			pst = cn.prepareStatement(sql);
-			
+
 			pst.setInt(1, idConseiller);
 			rs = pst.executeQuery();
-			
+
 			while (rs.next()) {
 				client = new Client();
 				client.setId(rs.getInt("id"));
 				client.setNom(rs.getString("nom"));
 				client.setPrenom(rs.getString("prenom"));
 				client.setAdresse(rs.getString("adresse"));
-				client.setTelephone(rs.getInt("telephone"));
+				client.setTelephone(rs.getString("telephone"));
+				client.setEmail(rs.getString("email"));
 				clients.add(client);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		JdbcUtil.seDeconnecter(cn, pst, null);
-		
-		
+
 		return clients;
 	}
 
 	@Override
 	public Client findClientById(int id) {
-		
-		Connection cn; PreparedStatement pst=null; ResultSet rs = null;		
+
+		Connection cn;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 		cn = JdbcUtil.seConnecter();
 		Client client = null;
 
 		try {
 			String sql = "SELECT * FROM personne p WHERE p.id = ?";
 			pst = cn.prepareStatement(sql);
-			
+
 			pst.setInt(1, id);
 			rs = pst.executeQuery();
-			
+
 			if (rs.next()) {
 				client = new Client();
 				client.setId(rs.getInt("id"));
 				client.setNom(rs.getString("nom"));
 				client.setPrenom(rs.getString("prenom"));
 				client.setAdresse(rs.getString("adresse"));
-				client.setTelephone(rs.getInt("telephone"));
+				client.setTelephone(rs.getString("telephone"));
+				client.setEmail(rs.getString("email"));
 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		JdbcUtil.seDeconnecter(cn, pst, null);
-		
-		
+
 		return client;
 
 	}
 
 	@Override
 	public void updateClient(Client client) {
-		
-		Connection cn; PreparedStatement pst=null; ResultSet rs = null;		
+
+		Connection cn;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 		cn = JdbcUtil.seConnecter();
 		Client cl = null;
 
 		try {
-			String sql = "UPDATE `personne` SET `nom`=?,`prenom`=?,`adresse`=?,`telephone`=? WHERE id = ?";
+			String sql = "UPDATE `personne` SET `nom`=?,`prenom`=?,`adresse`=?,`telephone`=?,`email`=? WHERE id = ?";
 			pst = cn.prepareStatement(sql);
-			
+
 			pst.setString(1, client.getNom());
 			pst.setString(2, client.getPrenom());
 			pst.setString(3, client.getAdresse());
-			pst.setInt(4, client.getTelephone());
-			pst.setInt(5, client.getId());
+			pst.setString(4, client.getTelephone());
+			pst.setString(5, client.getEmail());
+			pst.setInt(6, client.getId());
 			pst.executeUpdate();
-						
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		JdbcUtil.seDeconnecter(cn, pst, null);
-		
-		
+
 	}
 
 	@Override
 	public List<Compte> findComptes(int idClient) {
-		
-		Connection cn; PreparedStatement pst=null; ResultSet rs = null;		
+
+		Connection cn;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
 		cn = JdbcUtil.seConnecter();
 		Compte compte = null;
 		List<Compte> comptes = new ArrayList();
@@ -125,35 +130,33 @@ public class ClientDaoImp implements IClientDao {
 		try {
 			String sql = "SELECT * FROM `client_compte` cc, comptes c WHERE cc.idcompte = c.id and cc.idClient= ?";
 			pst = cn.prepareStatement(sql);
-			
+
 			pst.setInt(1, idClient);
 			rs = pst.executeQuery();
 			String typeCompte;
-			
+
 			while (rs.next()) {
 				typeCompte = rs.getString("typeCompte");
 				if (typeCompte.equals("courant")) {
 					compte = new CompteCourant();
 					compte.setNumeroCompte(rs.getInt("id"));
 					compte.setSolde(rs.getDouble("solde"));
-					((CompteCourant)compte).setDecouvert(rs.getDouble("decouvert"));
-				}else {
-					compte = new CompteEpargne();					
+					((CompteCourant) compte).setDecouvert(rs.getDouble("decouvert"));
+				} else {
+					compte = new CompteEpargne();
 					compte.setNumeroCompte(rs.getInt("id"));
 					compte.setSolde(rs.getDouble("solde"));
-					((CompteEpargne)compte).setTaux(rs.getDouble("taux"));
+					((CompteEpargne) compte).setTaux(rs.getDouble("taux"));
 				}
-
 
 				comptes.add(compte);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		JdbcUtil.seDeconnecter(cn, pst, null);
-		
-		
+
 		return comptes;
 	}
 
