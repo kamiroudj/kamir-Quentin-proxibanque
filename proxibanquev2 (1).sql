@@ -22,6 +22,10 @@ SET time_zone = "+00:00";
 -- Base de données :  `proxibanquev2`
 --
 
+DROP DATABASE IF EXISTS proxibanque;
+CREATE DATABASE proxibanque;
+USE proxibanque;
+
 -- --------------------------------------------------------
 --
 -- Structure de la table `personne`
@@ -32,21 +36,22 @@ CREATE TABLE `personne` (
   `nom` varchar(30) NOT NULL,
   `prenom` varchar(30) NOT NULL,
   `adresse` varchar(50) NOT NULL,
-  `telephone` int(10) NOT NULL
+  `telephone` varchar(10) NOT NULL,
+  `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `personne`
 --
 
-INSERT INTO `personne` (`id`, `nom`, `prenom`, `adresse`, `telephone`) VALUES
-(1,'Durieux', 'Elocia', '20, avenue Gambetta, Paris', 0154859632),
-(2,'john', 'vanhertmann', '20, rue du jouet, Strasbourg', 0654858532),
-(3,'monsieur', 'conseiller', '14 bd saint georges, Paris', 0755556937),
-(4,'joiut', 'hermann', '30 rue lecourbe, Avignon', 0642421687),
-(5,'jojo', 'dudu', '158 avenue de france, 75006 Paris', 0785204612),
-(6,'franck', 'bonhomme', '75 rue saint jacques, Rosny', 0612457865),
-(7,'Roussel', 'Sylvain', '4 rue de la glacière,75014 Paris', 0616657835);
+INSERT INTO `personne` (`id`, `nom`, `prenom`, `adresse`, `telephone`, `email`) VALUES
+(1,'Durieux', 'Elocia', '20, avenue Gambetta, Paris', '0154859632', 'pre1.nom1@boitemail.fr'),
+(2,'john', 'vanhertmann', '20, rue du jouet, Strasbourg', '0654858532', 'pre2.nom2@boitemail.fr'),
+(3,'monsieur', 'conseiller', '14 bd saint georges, Paris', '0755556937', 'pre3.nom3@boitemail.fr'),
+(4,'joiut', 'hermann', '30 rue lecourbe, Avignon', '0642421687', 'pre4.nom4@boitemail.fr'),
+(5,'jojo', 'dudu', '158 avenue de france, 75006 Paris', '0785204612', 'pre5.nom5@boitemail.fr'),
+(6,'franck', 'bonhomme', '75 rue saint jacques, Rosny', '0612457865', 'pre6.nom6@boitemail.fr'),
+(7,'Roussel', 'Sylvain', '4 rue de la glacière,75014 Paris', '0616657835', 'pre7.nom7@boitemail.fr');
 
 
 
