@@ -78,5 +78,7 @@
   	<url-pattern>/listClient</url-pattern>
   	<url-pattern>/updateClient</url-pattern>
   	<url-pattern>/logout</url-pattern>
+  	<url-pattern>/virement</url-pattern>
+  	<url-pattern>/comptes</url-pattern>
   </filter-mapping>
 </web-app>

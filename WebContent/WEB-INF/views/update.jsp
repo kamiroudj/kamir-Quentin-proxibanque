@@ -22,6 +22,10 @@
                 <label for="InputTelephone">Telephone</label>
                 <input type="text" class="form-control" id="InputTel" name="telephone" value="${client.telephone}">
             </div>
+            <div class="form-group">
+                <label for="InputEmail">Email</label>
+                <input type="text" class="form-control" id="InputMail" name="email" value="${client.email}">
+            </div>
             <button class="valForm">Valider</button>
         </form>
 

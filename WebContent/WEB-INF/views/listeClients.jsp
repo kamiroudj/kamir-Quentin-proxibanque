@@ -9,7 +9,6 @@
                			 <h3>Liste des clients</h3>
             		</div>
 		<table class="table table-bordered">
-
 			<thead>
 				<tr>
 					<th scope="col">Numéro</th>
