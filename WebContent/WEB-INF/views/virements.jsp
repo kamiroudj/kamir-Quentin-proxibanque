@@ -12,23 +12,23 @@
 		<form  method="post" action="<c:url value="/virement" />">
 			<div class=form-group>
 				<h4>Compte à débiter :</h4>
-				<select id="compteCredit" class="form-control">
-					<c:forEach var="comptes" items="${comptes}">
-					<option>${compte.numeroCompte}</option>
+				<select id="compteCredit" name="select1" class="form-control">
+					<c:forEach var="compte" items="${comptes}">
+					<option value="${compte.numeroCompte}">${compte.numeroCompte}     ${compte.getClass().getSimpleName()} </option>
 					</c:forEach>
 				</select>
 			</div>
 			<div class=form-group>
 				<h4>Compte à créditer :</h4>
-				<select id="compteDebit" class="form-control">
-					<c:forEach var="comptes" items="${comptes}">
-					<option>${compte.numeroCompte}</option>
+				<select id="compteDebit" name="select2" class="form-control">
+					<c:forEach var="compte" items="${comptes}">
+					<option value="${compte.numeroCompte}">${compte.numeroCompte}     ${compte.getClass().getSimpleName()}</option>
 					</c:forEach>
 				</select>						
 			</div>
 			<div class=form-group>
 				<h4>Montant :</h4>
-				<input class="form-control" type="text" placeholder="Montant à verser">
+				<input class="form-control" type="text" placeholder="Montant à verser" name="montant"s>
 			</div>
 			<button class="valForm">Valider</button>
 		</form>
