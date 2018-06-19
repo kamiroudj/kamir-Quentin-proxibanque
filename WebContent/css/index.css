@@ -115,6 +115,7 @@ button.valForm{
 
 .widget-header {
 	position: relative;
+	bottom:3ex;
 }
 
 .widget-header>h3 {
@@ -160,11 +161,8 @@ div#icones{
 }
 
 div.virementBloc{
-	position: relative;
-    background-color: darkgray;
     padding: 2em;
-    top: 250px;
-    width: 500px;
+    width: 700px;
     margin-right: auto;
     margin-left: auto;
     border-radius: 15px;
