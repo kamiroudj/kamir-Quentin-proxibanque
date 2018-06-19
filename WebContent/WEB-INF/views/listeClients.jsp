@@ -1,14 +1,13 @@
 <%@include file="header1.jsp"%>
 
 
-<div class="container">
+<div class="container"style=position:relative;top:5em>
 
 	<div class="container-fluid">
-		            <div class="widget-header">
-                <h3>Liste des comptes</h3>
-            </div id="bouttonlister">
-            <a href="<c:url value='/listClient' />"><input type="button" value="lister les clients"></a>
-		<table class="table table-bordered">
+		<div class="widget-header">
+			<h3>Liste des comptes</h3>
+		</div>
+		<table class="table table-bordered" style="background-color: gray">
 			<thead>
 				<tr>
 					<th scope="col">Numéro</th>
@@ -30,21 +29,25 @@
 						<td>
 							<nav class="navbar navbar-expand-sm navbar-light actions2">
 								<div id="icones">
-									<a href="<c:url value="/updateClient?idClient=${client.id}" />" alt="Modifier"
-										title="Modifier"><img id="CRUDIcons" title="Modifier"
-										alt="Modifier" src="images/update-icon.png" /></a>
+									<a href="<c:url value="/updateClient?idClient=${client.id}" />"
+										alt="Modifier" title="Modifier"><img id="CRUDIcons"
+										title="Modifier" alt="Modifier" src="images/update-icon.png"
+										style="width: 24px" style=height:24px /></a>
 								</div>
 								<div id="icones">
 									<a href="<c:url value='/deleteClient'/>" alt="Supprimer"
 										title="Supprimer"><img id="CRUDIcons" title="Supprimer"
-										alt="Supprimer" src="images/delete-icon.png" /></a>
+										alt="Supprimer" src="images/delete-icon.png"
+										style="width: 24px" style=height:24px /></a>
 								</div>
 								<div id="icones">
 									<a href="<c:url value='/listClient'/>" alt="ListComptes"
 										title="ListComptes"><img id="CRUDIcons"
-										title="ListComptes" alt="ListComptes" src="images/list-icon.png" /></a>
+										title="ListComptes" alt="ListComptes"
+										src="images/list-icon.png" style="width: 24px"
+										style=height:24px /></a>
 								</div>
-							</nav> 
+							</nav>
 						</td>
 					</tr>
 				</c:forEach>
