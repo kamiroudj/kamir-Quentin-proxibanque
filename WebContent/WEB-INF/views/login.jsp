@@ -12,15 +12,20 @@
 </head>
 
 <body style="background-color: gray">
+
 	<div class=header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+						<div class="roundedImage"></div>
+			<img id="logo" src="images/headerv2-logo.png" />
 			<h1 style="color: white">ProxiBanque</h1>
 		</nav>
 	</div>
+	
+	
 	<div class=content>
 		<form id="authentification" method="post"
 			action="<c:url value="/auth" />">
-			<span><h3>Authentification :</h3></span> <span
+			<span><h3>Authentification</h3></span> <span
 				class="alert alert-danger" role="alert">${erreur}</span>
 			<div class="form-group">
 				<label for="InputLogin">User Id</label> <input type="userId"

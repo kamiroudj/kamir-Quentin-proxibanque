@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 body{
     background-color: black;
 }
@@ -49,13 +49,7 @@ h3{
     text-decoration: underline;
 }
 
-div.presentation{
-    position: relative;
-    top: 150px;
-    width: 600px;
-    margin-right: auto;
-    margin-left: auto;
-}
+
 
 .navbar{
     height: 6em;
@@ -105,69 +99,6 @@ button.valForm{
 	height: 75px;
 	left: 25px;
 	top: 7px;
-=======
-body{
-    background-color: black;
-}
-span.alert.alert-danger {	
-	padding: 0px;
-	border :0px;
-}
 
 
-div.header{
-    z-index: +1;
-    width: 100%;
-    height: 7em;
-    position: fixed;
-    top: 0ex;
-    background-color: darkgoldenrod;
-}
-
-div.footer{
-    position: fixed;
-    z-index: +1;
-    width: 100%;
-    bottom: 0px;
-    background-color: darkgray;
-    height: 3ex;
-    text-align: center
-}
-
-form#authentification{
-    position: relative;
-    background-color: darkgray;
-    padding: 2em;
-    top: 250px;
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1ex solid gray;
-    border-radius: 15px;
-
-}
-
-
-h1{
-    margin-left: 10em;
-}
-h3{
-    position: relative;
-    bottom: 1ex;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
-
-.navbar{
-    height: 6em;
-}
-
-button.valForm{
-    border-radius: 5px;
-    margin-top: 1ex;
-    padding: 1ex;
-    width: 50%;
->>>>>>> 9b3b4701ed8abfcca747d39fd3bf748d91706a70
 }
