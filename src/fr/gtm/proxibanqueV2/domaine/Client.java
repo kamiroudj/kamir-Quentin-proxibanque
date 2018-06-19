@@ -1,61 +1,42 @@
 package fr.gtm.proxibanqueV2.domaine;
 
-public class Client {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Client extends Personne {
 	
-	private Integer id;
-	private String nom;
-	private String prenom;
-	private String adresse;
+	List<Compte> comptes = new ArrayList<Compte>();
+	
 	
 	/***************** constructeur *******************************************/
 	
 	public Client() {
-		
-	}
-	
-	
-	
-	
-	public Client(String nom, String prenom, String adresse) {
 		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.adresse = adresse;
 	}
 
-	
 	
 	/*********************** getters et setters *******************************/
-	public Integer getId() {
-		return id;
+	
+	public Client(String nom, String prenom, String adresse, int telephone) {
+		super(nom, prenom, adresse, telephone);
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+	public List<Compte> getComptes() {
+		return comptes;
 	}
 
-	public String getNom() {
-		return nom;
+
+	public void setComptes(List<Compte> comptes) {
+		this.comptes = comptes;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+	
+	
 
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
-
-	public String getAdresse() {
-		return adresse;
-	}
-
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
+	
+	
+	
+	
+	
 }

@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class JdbcUtil {
 	
-	private static final String url = "jdbc:mysql://localhost/proxibanque";
+	private static final String url = "jdbc:mysql://localhost/proxibanquev2";
 	private static final String login = "root";
 	private static final String passwd = "";
 	

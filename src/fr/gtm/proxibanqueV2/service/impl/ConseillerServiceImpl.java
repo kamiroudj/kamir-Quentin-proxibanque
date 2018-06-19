@@ -14,10 +14,26 @@ public class ConseillerServiceImpl implements IConseillerService {
 	private IClientDao dao= new ClientDaoImp();
 
 	@Override
-	public List<Client> findClients(Conseiller conseiller) {
+	public List<Client> findClients(int idConseiller) {
 				
-		return dao.findClients(conseiller);
+		return dao.findClients(idConseiller);
 				
 	}
+
+	@Override
+	public Client findClientById(int id) {
+		
+		return dao.findClientById(id);
+	}
+
+	@Override
+	public void updateClient(Client client) {
+	
+		dao.updateClient(client);
+	}
+	
+	
+	
+	
 
 }

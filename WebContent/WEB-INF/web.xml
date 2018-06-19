@@ -25,19 +25,10 @@
     <servlet-name>SupprimerClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.SupprimerClientServlet</servlet-class>
   </servlet>
-  
- <!--  <filter>
-  <filter-name>Filtre.Authentification</filter-name>
-  <filter-class>class du filtre</filter-class>
-  </filter>
-  
-  <filter-mapping> 
-    <filter-name>Filtre.Authentification</filter-name>
-    <url-pattern>/helloworld</url-pattern>
-    <url-pattern>/articles/*</url-pattern>
-    <url-pattern>/manage</url-pattern>
-  </filter-mapping>
-   -->
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.LogoutServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/auth</url-pattern>
@@ -53,5 +44,9 @@
   <servlet-mapping>
     <servlet-name>SupprimerClientServlet</servlet-name>
     <url-pattern>/deleteClient</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
 </web-app>

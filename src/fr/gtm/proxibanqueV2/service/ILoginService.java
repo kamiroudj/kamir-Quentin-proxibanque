@@ -6,9 +6,6 @@ import fr.gtm.proxibanqueV2.service.impl.LoginException;
 public interface ILoginService {
 	
 	
-	
-	//crud
-	
 	//verifier login et mot de passe
 	
 	

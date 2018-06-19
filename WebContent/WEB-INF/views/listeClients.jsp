@@ -25,6 +25,7 @@
 				<c:forEach var="client" items="${clients}">
 					<tr>
 
+<<<<<<< HEAD
 						<th scope="row">${client.id}</th>
 						<td>${client.nom}</td>
 						<td>${client.prenom}</td>
@@ -48,6 +49,20 @@
 								</div>
 							</nav> <%--   	 <div class="actions">
 	       <div><a href="<c:url value="/updateClient" />">modifier</a></div>
+=======
+      <th scope="row">${client.id}</th>
+      <td>${client.nom}</td>
+      <td>${client.prenom}</td>
+      <td>${client.adresse}</td>
+       <td>
+	      <%--  <div class="actions">
+	       <div><a href="<c:url value="/updateClient" />"><img class="CRUDIcons"  alt="logoModifier" src="images/update-icon.png" /></a></div>
+	       <div><a href="<c:url value="/deleteClient" />"><img class="CRUDIcons"  alt="logoSupprimer" src="images/delete-icon.png" /></a></div>
+	       <div><a href="<c:url value="/listClient" />"><img class="CRUDIcons" alt="logoListComptes" src="images/list-icon.png" /></a></div>
+	       </div> --%>
+	       <div class="actions">
+	       <div><a href="<c:url value="/updateClient?idClient=${client.id}" />">modifier</a></div>
+>>>>>>> 9b3b4701ed8abfcca747d39fd3bf748d91706a70
 	       <div><a href="<c:url value="/deleteClient" />">supprimer</a></div>
 	       <div><a href="<c:url value="/listClient" />">listeComptes</a></div>
 	   </div> --%>
