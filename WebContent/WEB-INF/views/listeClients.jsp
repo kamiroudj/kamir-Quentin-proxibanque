@@ -57,8 +57,8 @@
 									<a href="<c:url value="/virement?idClient=${client.id}" />"  
 										title="virements"><img id="CRUDIcons"
 										title="virements" alt="virements"
-										src="images/virement-icon.png" style="width: 24px"
-										style=height:24px /></a>
+										src="images/virement-icon.png" style="width: 30px"
+										style=height:30px /></a>
 								</div>
 							</nav>
 						</td>
