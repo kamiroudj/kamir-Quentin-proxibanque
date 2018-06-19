@@ -4,7 +4,10 @@
 <div class="container">
 
 	<div class="container-fluid">
-		
+		            <div class="widget-header">
+                <h3>Liste des comptes</h3>
+            </div id="bouttonlister">
+            <a href="<c:url value='/listClient' />"><input type="button" value="lister les clients"></a>
 		<table class="table table-bordered">
 			<thead>
 				<tr>
