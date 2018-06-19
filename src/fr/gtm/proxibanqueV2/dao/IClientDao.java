@@ -15,6 +15,8 @@ public interface IClientDao {
 
 	public void updateClient(Client client);
 
-	public List<Compte> findComptes(int idClient);
+	
+
+	
 	
 }

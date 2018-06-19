@@ -17,6 +17,10 @@ public interface IConseillerService {
 	public void updateClient(Client client);
 
 	public List<Compte> findComptesClient(int idClient);
+
+	public List<Compte> findComptes();
+
+	public void effectuerVirement(int compDeb, int compCre, double montant) throws SoldeException;
 	
 	
 	//crud

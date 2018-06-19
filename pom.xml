@@ -6,6 +6,15 @@
   <packaging>war</packaging>
   <name>proxibanque</name>
   <description>gestion bancaire de la clientèle</description>
+  
+    <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+  </properties>
+  
+  
+  
+  
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
