@@ -34,7 +34,7 @@ form#authentification{
     width: 500px;
     margin-right: auto;
     margin-left: auto;
-    border: 1ex solid gray;
+    border: 1ex solid black;
     border-radius: 15px;
 
 }
@@ -65,4 +65,43 @@ button.valForm{
     margin-top: 1ex;
     padding: 1ex;
     width: 50%;
+}
+
+#username {
+	position: absolute;
+	right: 22%;
+}
+
+#logout {
+	width: 3ex;
+	height: 3ex;
+}
+
+#disconect{
+	position: absolute;
+	right: 20%;
+}
+
+.roundedImage {
+	position: absolute;
+	background-color: gray;
+	overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+	widows: 87px;
+	width: 80px;
+	height:80px;
+	left: 4ex;
+
+}
+
+#logo {
+	position: relative;
+	border-radius: 50%;
+	z-index: +2;
+	width: 75px;
+	height: 75px;
+	left: 25px;
+	top: 7px;
 }
