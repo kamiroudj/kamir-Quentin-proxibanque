@@ -4,17 +4,12 @@
 <div class="container"style=position:relative;top:5em>
 
 	<div class="container-fluid">
-<<<<<<< HEAD
+
 		            <div class="widget-header">
                			 <h3>Liste des clients</h3>
             		</div>
 		<table class="table table-bordered">
-=======
-		<div class="widget-header">
-			<h3>Liste des comptes</h3>
-		</div>
-		<table class="table table-bordered" style="background-color: gray">
->>>>>>> branch 'master' of https://github.com/kamiroudj/kamir-Quentin-proxibanque.git
+
 			<thead>
 				<tr>
 					<th scope="col">Numéro</th>
@@ -36,16 +31,10 @@
 						<td>
 							<nav class="navbar navbar-expand-sm navbar-light actions2">
 								<div id="icones">
-<<<<<<< HEAD
-									<a href="<c:url value="/updateClient?idClient=${client.id}" />" 
-										title="Modifier"><img id="CRUDIcons" title="Modifier"
-										alt="Modifier" src="images/update-icon.png" /></a>
-=======
 									<a href="<c:url value="/updateClient?idClient=${client.id}" />"
 										alt="Modifier" title="Modifier"><img id="CRUDIcons"
 										title="Modifier" alt="Modifier" src="images/update-icon.png"
 										style="width: 24px" style=height:24px /></a>
->>>>>>> branch 'master' of https://github.com/kamiroudj/kamir-Quentin-proxibanque.git
 								</div>
 								<div id="icones">
 									<a href="<c:url value='/deleteClient'/>" 
