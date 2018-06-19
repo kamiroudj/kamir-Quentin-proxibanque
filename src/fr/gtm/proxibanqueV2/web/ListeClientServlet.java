@@ -17,6 +17,7 @@ import fr.gtm.proxibanqueV2.service.impl.ConseillerServiceImpl;
 
 /**
  * Servlet implementation class ListeClientServlet
+ * Affiche la vue 'listeClients' 
  */
 public class ListeClientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

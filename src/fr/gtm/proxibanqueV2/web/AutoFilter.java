@@ -16,7 +16,7 @@ import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 public class AutoFilter implements Filter{
 	
-	public static final String SESSION_AUTH ="auth";
+	public static final String SESSION_AUTH ="conseiller";
 
 	@Override
 	public void destroy() {

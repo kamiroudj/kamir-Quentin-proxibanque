@@ -21,8 +21,11 @@
     <servlet-name>ModifierClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.ModifierClientServlet</servlet-class>
   </servlet>
-  
-   <servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>fr.gtm.proxibanqueV2.web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>ListeCompteServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.ListeCompteServlet</servlet-class>
   </servlet> 
@@ -30,13 +33,6 @@
     <servlet-name>SupprimerClientServlet</servlet-name>
     <servlet-class>fr.gtm.proxibanqueV2.web.SupprimerClientServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>LogoutServlet</servlet-name>
-    <servlet-class>fr.gtm.proxibanqueV2.web.LogoutServlet</servlet-class>
-  </servlet>
-  
-  
-  
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/auth</url-pattern>
@@ -49,19 +45,26 @@
     <servlet-name>ModifierClientServlet</servlet-name>
     <url-pattern>/updateClient</url-pattern>
   </servlet-mapping>
-  
-    <servlet-mapping>
-    <servlet-name>ListeCompteServlet</servlet-name>
-    <url-pattern>/comptes</url-pattern>
-  </servlet-mapping>
-  
-  
-  <servlet-mapping>
-    <servlet-name>SupprimerClientServlet</servlet-name>
-    <url-pattern>/deleteClient</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListeCompteServlet</servlet-name>
+    <url-pattern>/comptes</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+    <servlet-name>SupprimerClientServlet</servlet-name>
+    <url-pattern>/deleteClient</url-pattern>
+  </servlet-mapping>
+  <filter>
+  	<filter-name>AutoFilter</filter-name>
+  	<filter-class>fr.gtm.proxibanqueV2.web.AutoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AutoFilter</filter-name>
+  	<url-pattern>/listClient</url-pattern>
+  	<url-pattern>/updateClient</url-pattern>
+  	<url-pattern>/logout</url-pattern>
+  </filter-mapping>
 </web-app>

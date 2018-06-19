@@ -15,6 +15,7 @@ import fr.gtm.proxibanqueV2.service.impl.LoginException;
 
 /**
  * Servlet implementation class ConseillerServlet
+ * Redirige vers la vue login. Vérification de l'identité de l'utilisateur/matching avec BD
  */
 
 public class LoginServlet extends HttpServlet {
@@ -27,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Charge les informations contenues dans la vue 'login.jsp'
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -35,6 +37,7 @@ public class LoginServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * request les paramètres d'authentification login et password pour renvoyer (si correct) à la vue 'listeClient' du conseiller connecté.
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
